@@ -1,0 +1,9 @@
+1  sudo apt-get install git
+2  cd ~/.ssh
+3  ssh-keygen
+4  根据提示输入保存的文件名  (id_ras)
+5  不输入命名  直接enter 2次过掉
+6  gedit id_ras.pub  
+7  复制内容 切换到 github帐号下 增加sshkey
+8  ssh -T git@github.com 测试是否配置成功
+9   如果有 denied 错误增加  ssh-add 
