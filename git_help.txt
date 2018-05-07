@@ -1,0 +1,92 @@
+                  
+
+
+      |<---  checkout ----   |<---  reset -----|<-----fetch/clone--------|
+                   add     |      commit       |          push           |
+working Directory-------->stage ---------->Repository--------------->remote
+   ^                                           |                         |
+   |-------------------checkout  --------------|                         | 
+   ---------------------------------pull---------------------------------|
+
+   1 初始化仓库 
+     git  init 
+   
+  2 将文件添加到仓库
+    
+    git add 文件名 ： #添加文件到暂存区
+    git add -u  #添加所有被tracked文件中别修改或删除的文件信息到暂存区，不处理untracked的文件
+    git add -A  #添加所有被tracked文件中别修改或删除的文件信息到暂存区，包过untracked的文件
+    git add .   #将当前工作区的所有文件都加入暂存区
+   
+ 3  将暂存区 文件提交到本地仓库
+    git commit -m "提交说明"    #将暂存区内容提交到本地仓库
+    git commit -a -m "提交说明"  #跳过缓存区的操作，直接把工作区的内容提交到本地仓库
+
+ 4  查看仓库当期状态 
+    git status
+ 
+ 5  比较文件异同 
+     git diff  #工作区与暂存区的差异
+     git diff 分支名 #工作区雨某分支的差异  远程分支的写法  remotes/origin/分支名
+     git diff HEAD #工作区 于head指针指向的内容差异 
+     git diff --stage #工作区文件域上次提交的差异
+     git diff 版本TAG #产看从某个版本后都改动的内容
+     git diff 分支A 分支B  
+     git diff TAG A  TAG B
+
+     git diff 分支A...  分支B...  比较两分支在分开后各自的改动
+ 6  查看历史记录 
+    git log
+    git log -p -次数 
+    git log --stat
+    git log --name-only
+    git log --name-staus
+    git log --online
+    git log -graph -all --online
+    git log fileName
+
+7 代码回滚 
+
+   git reset HEAD^ #恢复上次提交 多个^ 一个^代表1次  
+   git reset --hard 版本号 
+   #--soft 只是改变HEAD指针指向 ， 缓存区和工作区不变 
+   # --mixed 改变HEAD指针指向 ， 缓存区内容丢失，工作区不变
+ # --hard 改变HEAD指针指向 ， 缓存区内容丢失，工作区恢复以前状态
+
+8 同步远程仓库
+  git push -u orgin master
+
+9 删除版本库文件 
+  git rm 文件名 
+
+10 版本库里的版本 替换工作区的版本 
+  git checkout --文件名 
+
+11 本地仓库的内容推送到远程仓库
+
+   git remote add origin 
+
+12 从远程 仓库克隆项目到 本地
+
+   git clone 
+
+
+   
+
+
+
+
+
+
+
+
+   
+
+  
+
+
+
+
+
+
+   
